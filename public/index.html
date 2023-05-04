@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<h1>Formulário de Comissão</h1>
+
+<body page='lista'>
+    <div id='listaRegistros'>
+        <div style='display: flex;'>
+            <input style='flex:1' placeholder="PESQUISAR" autofocus id='inputPesquisa' />
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>E-mail</th>
+                    <th>Comissão em %</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id='listaRegistrosBody'></tbody>
+        </table>
+        <div>
+            <button onclick="vizualizar('cadastro', true)">Novo participante</button>
+        </div>
+
+    </div>
+
+    <form id='cadastroRegistro' onsubmit="submit()">
+        <div class='label'>
+            <div>ID</div>
+            <div>
+                <input type='number' readonly id='id' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>E-mail</div>
+            <div>
+                <input type="email" name="email" id="email" required />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Comissão em %</div>
+            <div>
+                <input type='number' name="percentual" min="0" max="100" id="comissao" required />
+            </div>
+        </div>
+
+        <div>
+            <button>Salvar</button>
+            <button onclick="vizualizar('lista')" class="cinza" type='button'>Cancelar</button>
+            <button type="submit" id="submit-btn">Enviar</button>
+        </div>
+
+    </form>
+
+</body>
+<script type='text/javascript' src="script.js"></script>
+
+</html>
